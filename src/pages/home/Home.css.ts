@@ -8,25 +8,40 @@ export const container = style({
   alignItems: 'center',
   justifyContent: 'center',
   minHeight: '100vh',
-  backgroundColor: colors.gray050,
   padding: '2rem',
 });
 
 export const card = style({
-  backgroundColor: colors.gray000,
   padding: '3rem',
   borderRadius: '12px',
-  boxShadow: `0 4px 12px ${colors.gray000_10}`,
-  border: `1px solid ${colors.gray200}`,
+  boxShadow: `0 4px 30px ${colors.gray000_10}`,
   maxWidth: '600px',
   width: '100%',
 });
 
-export const title = typography.heading_sb_60;
+export const title = style([
+  typography.heading_sb_60,
+  {
+    color: colors.gray000,
+  },
+]);
 
-export const subtitle = typography.heading_sb_22;
+export const subtitle = style([
+  typography.heading_sb_22,
+  {
+    color: colors.gray600,
+  },
+]);
 
-export const description = typography.body_r_14;
+export const description = style([
+  typography.body_r_14,
+  { color: colors.error },
+]);
+
+export const description2 = style([
+  typography.body_r_14,
+  { color: colors.gray600 },
+]);
 
 export const button = style({
   backgroundColor: colors.primary,

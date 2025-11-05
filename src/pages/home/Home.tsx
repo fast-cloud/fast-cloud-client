@@ -7,7 +7,7 @@ function Home() {
         <h1 className={styles.title}>CLOUD STANDARD</h1>
         <h2 className={styles.subtitle}>입문자용 클라우드 서비스</h2>
 
-        <p className={styles.description}>
+        <p className={styles.description2}>
           복잡하고 반복적인 인프라 설정 과정을 추상화하고, 사용 목적에 맞는
           표준화된 템플릿을 제공합니다.
         </p>
