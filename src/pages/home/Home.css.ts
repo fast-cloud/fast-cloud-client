@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { colors } from '../../shared/styles/tokens/colors.css';
-import { typography } from '../../shared/styles/tokens/typography.css';
+import { typographyStyle } from '../../shared/styles/tokens/typography.css';
 
 export const container = style({
   display: 'flex',
@@ -19,29 +19,25 @@ export const card = style({
   width: '100%',
 });
 
-export const title = style([
-  typography.heading_sb_60,
-  {
-    color: colors.gray000,
-  },
-]);
+export const title = style({
+  ...typographyStyle('heading_sb_60'),
+  color: colors.gray000,
+});
 
-export const subtitle = style([
-  typography.heading_sb_22,
-  {
-    color: colors.gray600,
-  },
-]);
+export const subtitle = style({
+  ...typographyStyle('heading_sb_22'),
+  color: colors.gray300,
+});
 
-export const description = style([
-  typography.body_r_14,
-  { color: colors.error },
-]);
+export const description = style({
+  ...typographyStyle('body_r_14'),
+  color: colors.error,
+});
 
-export const description2 = style([
-  typography.body_r_14,
-  { color: colors.gray600 },
-]);
+export const description2 = style({
+  ...typographyStyle('body_r_14'),
+  color: colors.gray400,
+});
 
 export const button = style({
   backgroundColor: colors.primary,
@@ -61,7 +57,7 @@ export const button = style({
   },
 });
 
-export const buttonText = typography.caption_m_12;
+export const buttonText = style(typographyStyle('caption_m_12'));
 
 export const badge = style({
   display: 'inline-block',

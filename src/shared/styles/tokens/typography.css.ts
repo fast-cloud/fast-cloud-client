@@ -1,131 +1,91 @@
-import { style } from '@vanilla-extract/css';
-
 /**
  * Typography Design Tokens
  * 프로젝트 전역에서 사용되는 타이포그래피 토큰을 정의합니다.
  */
 
-// 공통 스타일
-const baseTypography = style({
-  lineHeight: '150%',
-  letterSpacing: '-0.03em',
-});
-
-// 폰트 weight 상수
+// font weight 상수
 const fontWeight = {
   semibold: 600,
   medium: 500,
   regular: 400,
 } as const;
 
-// Heading 스타일
-export const heading_sb_60 = style([
-  baseTypography,
-  {
+export const typographyVars = {
+  heading_sb_60: {
     fontSize: '3.75rem',
     fontWeight: fontWeight.semibold,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const heading_sb_22 = style([
-  baseTypography,
-  {
+  heading_sb_22: {
     fontSize: '1.375rem',
     fontWeight: fontWeight.semibold,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-// Title 스타일
-export const title_sb_16 = style([
-  baseTypography,
-  {
+  title_sb_16: {
     fontSize: '1rem',
     fontWeight: fontWeight.semibold,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const title_m_16 = style([
-  baseTypography,
-  {
+  title_m_16: {
     fontSize: '1rem',
     fontWeight: fontWeight.medium,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const title_r_16 = style([
-  baseTypography,
-  {
+  title_r_16: {
     fontSize: '1rem',
     fontWeight: fontWeight.regular,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-// Body 스타일
-export const body_m_14 = style([
-  baseTypography,
-  {
+  body_m_14: {
     fontSize: '0.875rem',
     fontWeight: fontWeight.medium,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const body_r_14 = style([
-  baseTypography,
-  {
+  body_r_14: {
     fontSize: '0.875rem',
     fontWeight: fontWeight.regular,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const body_r_14_underline = style([
-  baseTypography,
-  {
+  body_r_14_underline: {
     fontSize: '0.875rem',
     fontWeight: fontWeight.regular,
-    textDecoration: 'underline',
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
+    textDecoration: 'underline' as const,
   },
-]);
-
-// Caption 스타일
-export const caption_m_12 = style([
-  baseTypography,
-  {
+  caption_m_12: {
     fontSize: '0.75rem',
     fontWeight: fontWeight.medium,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const caption_r_12 = style([
-  baseTypography,
-  {
+  caption_r_12: {
     fontSize: '0.75rem',
     fontWeight: fontWeight.regular,
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
   },
-]);
-
-export const caption_r_12_underline = style([
-  baseTypography,
-  {
+  caption_r_12_underline: {
     fontSize: '0.75rem',
     fontWeight: fontWeight.regular,
-    textDecoration: 'underline',
+    lineHeight: '150%',
+    letterSpacing: '-0.03em',
+    textDecoration: 'underline' as const,
   },
-]);
-
-// 모든 타이포그래피 스타일을 객체로 export
-export const typography = {
-  heading_sb_60,
-  heading_sb_22,
-  title_sb_16,
-  title_m_16,
-  title_r_16,
-  body_m_14,
-  body_r_14,
-  body_r_14_underline,
-  caption_m_12,
-  caption_r_12,
-  caption_r_12_underline,
 } as const;
 
-// Type for typography keys
-export type TypographyToken = keyof typeof typography;
+// typography 헬퍼 함수
+export type TypographyKey = keyof typeof typographyVars;
+
+export const typographyStyle = (key: TypographyKey) => {
+  const styleValue = typographyVars[key];
+  if (!styleValue) throw new Error(`Invalid typography key: ${key}`);
+  return styleValue;
+};
