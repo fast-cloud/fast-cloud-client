@@ -5,11 +5,13 @@ import { TextField } from '@/shared/components/textField/TextField';
 import { CheckboxTextField } from '@/shared/components/checkboxTextField/CheckboxTextField';
 import { Toast } from '@/shared/components/toast/Toast';
 import { Tag } from '@/shared/components/tag/Tag';
+import { StatusChip } from '@/shared/components/statusChip/StatusChip';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { ICON_TYPES } from '@/shared/constants/icon';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { TOAST_TYPES } from '@/shared/constants/toast';
 import { TAG_TYPES } from '@/shared/constants/tag';
+import { STATUS_CHIP_TYPES } from '@/shared/constants/statusChip';
 import * as styles from './TestPage.css';
 
 export const TestPage = () => {
@@ -168,7 +170,7 @@ export const TestPage = () => {
         <div className={styles.buttonGrid}>
           <Toast
             type={TOAST_TYPES.SUCCESS}
-            content="컨테이너가 생성돼었어요."
+            content="컨테이너가 생성되었어요."
           />
           <Toast
             type={TOAST_TYPES.FAILURE}
@@ -183,8 +185,18 @@ export const TestPage = () => {
           <Tag tagType={TAG_TYPES.BLUE}>Blue Tag</Tag>
           <Tag tagType={TAG_TYPES.WHITE}>White Tag</Tag>
           <Tag tagType={TAG_TYPES.GRAY}>Gray Tag</Tag>
-          <Tag tagType={TAG_TYPES.BLUE}>실행 중</Tag>
-          <Tag tagType={TAG_TYPES.GRAY}>중지됨</Tag>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.title}>StatusChip</h2>
+        <div className={styles.buttonGrid}>
+          <StatusChip status={STATUS_CHIP_TYPES.IN_PROGRESS}>
+            실행 중
+          </StatusChip>
+          <StatusChip status={STATUS_CHIP_TYPES.IN_PROGRESS}>
+            In Progress
+          </StatusChip>
         </div>
       </section>
     </div>
