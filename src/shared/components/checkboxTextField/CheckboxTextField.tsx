@@ -5,7 +5,7 @@ import * as styles from './CheckboxTextField.css';
 interface CheckboxTextFieldProps
   extends Omit<React.ComponentProps<'input'>, 'type'> {
   // Checkbox 컴포넌트의 type은 'checkbox'로 고정되어 있음
-  // Checkbox에 type 이외의 props(checked 등) 전달은 허용, type props 전달 시 오류 발생 -> 개발 안정성 증대
+  // Checkbox에 type 이외의 props(checked 등) 전달은 허용, type props 전달 시 오류 발생 -> 개발 안정성
   title: string;
   detail: string;
 }

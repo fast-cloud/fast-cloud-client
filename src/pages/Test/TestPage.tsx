@@ -3,9 +3,11 @@ import { IconButton } from '@/shared/components/iconButton/IconButton';
 import { Checkbox } from '@/shared/components/checkbox/Checkbox';
 import { TextField } from '@/shared/components/textField/TextField';
 import { CheckboxTextField } from '@/shared/components/checkboxTextField/CheckboxTextField';
+import { Toast } from '@/shared/components/toast/Toast';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { ICON_TYPES } from '@/shared/constants/icon';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
+import { TOAST_TYPES } from '@/shared/constants/toast';
 import * as styles from './TestPage.css';
 
 export const TestPage = () => {
@@ -156,6 +158,20 @@ export const TestPage = () => {
             checked
           />
           <CheckboxTextField title="비활성화" detail="비활성화 상태" disabled />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.title}>Toast</h2>
+        <div className={styles.buttonGrid}>
+          <Toast
+            type={TOAST_TYPES.SUCCESS}
+            content="컨테이너가 생성돼었어요."
+          />
+          <Toast
+            type={TOAST_TYPES.FAILURE}
+            content="컨테이너를 생성하지 못했어요. 다시 시도해주세요."
+          />
         </div>
       </section>
     </div>
