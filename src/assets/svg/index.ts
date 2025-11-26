@@ -57,3 +57,6 @@ export { default as Icn_Success } from '@svg/icn/icn_success.svg?react';
 export { default as Divider_Large } from '@svg/divider/divider_large.svg?react';
 export { default as Divider_Medium } from '@svg/divider/divider_medium.svg?react';
 export { default as Divider_Vertical } from '@svg/divider/divider_vertical.svg?react';
+
+// title
+export { default as Title } from '@svg/title.svg?react';
