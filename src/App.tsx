@@ -1,7 +1,8 @@
+import { TestPage } from '@/pages/Test/TestPage';
 import Header from '@/shared/components/header/Header';
 
 function App() {
-  return <Header hasButton={true} />;
+  return <TestPage />;
 }
 
 export default App;

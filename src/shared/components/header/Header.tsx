@@ -7,7 +7,7 @@ interface Props {
   hasButton?: boolean;
 }
 
-const Header = ({ hasButton = false }: Props) => {
+export const Header = ({ hasButton = false }: Props) => {
   return (
     <header className={styles.container}>
       <Title />
