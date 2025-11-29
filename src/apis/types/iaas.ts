@@ -1,10 +1,13 @@
 // 버킷 생성 POST
-export interface CreateBucketRequest {
-  name: string;
+export interface CreateInstanceRequest {
+  instanceName: string;
+  templateId: number;
 }
 
-export interface CreateBUcketResponse {
-  name: string;
+export interface CreateInstanceResponse {
+  instanceId: string;
+  instanceName: string;
+  openstackUuid: string;
   status: string;
-  created_at: string;
+  createdAt: string;
 }
