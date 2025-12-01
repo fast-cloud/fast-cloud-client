@@ -1,7 +1,11 @@
 import CardRect from '@/shared/components/card/card-rect';
 import * as styles from './select-service.css';
+import { useNavigate } from 'react-router';
+import { ROUTES } from '@/routes/paths';
 
 const SelectService = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -14,7 +18,7 @@ const SelectService = () => {
       <div className={styles.selections}>
         <CardRect
           size="large"
-          title="제목1"
+          title="미니PC 대여"
           detail="설명을 입력하는 공간입니다. 최대 세 줄까지 쓸 수 있어요."
           explanations={[
             '최대 한 줄까지 쓸 수 있어요.',
@@ -22,10 +26,11 @@ const SelectService = () => {
             '최대 한 줄까지 쓸 수 있어요.',
           ]}
           buttonName="이동하기"
+          onSelect={() => navigate(ROUTES.SELECT_INSTANCE_TYPE)}
         />
         <CardRect
           size="large"
-          title="제목1"
+          title="컨테이너 서비스"
           detail="설명을 입력하는 공간입니다. 최대 세 줄까지 쓸 수 있어요."
           explanations={[
             '최대 한 줄까지 쓸 수 있어요.',
@@ -33,10 +38,11 @@ const SelectService = () => {
             '최대 한 줄까지 쓸 수 있어요.',
           ]}
           buttonName="이동하기"
+          onSelect={() => navigate(ROUTES.CREATE_CONTAINER)}
         />
         <CardRect
           size="large"
-          title="제목1"
+          title="오브젝트 스토리지"
           detail="설명을 입력하는 공간입니다. 최대 세 줄까지 쓸 수 있어요."
           explanations={[
             '최대 한 줄까지 쓸 수 있어요.',
@@ -44,6 +50,7 @@ const SelectService = () => {
             '최대 한 줄까지 쓸 수 있어요.',
           ]}
           buttonName="이동하기"
+          onSelect={() => navigate(ROUTES.NEW_INSTANCE)}
         />
       </div>
     </div>

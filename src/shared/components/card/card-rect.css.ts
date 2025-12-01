@@ -10,8 +10,22 @@ export const container = recipe({
     padding: '32px',
     justifyContent: 'space-between',
     borderRadius: '20px',
-    border: `1px solid ${colors.gray000_06}`,
+    outline: `1px solid ${colors.gray000_06}`,
+    outlineOffset: '-1px',
     minHeight: '430px',
+    transition: 'all 0.2s ease',
+    userSelect: 'none',
+    selectors: {
+      '&:hover': {
+        background: `linear-gradient(180deg, transparent 0%, ${colors.primary_20} 100%)`,
+        outline: `1px solid ${colors.gray000_02}`,
+        outlineOffset: '-1px',
+        transform: 'scale(1.01)',
+      },
+      '&:active': {
+        transform: 'scale(0.99)', // GPU 가속
+      },
+    },
   },
   variants: {
     size: {

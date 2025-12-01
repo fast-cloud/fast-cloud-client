@@ -9,9 +9,11 @@ import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { Button } from '@/shared/components/button/Button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateInstanceMutation } from '@/apis/mutations/use-create-instance';
+import { useNavigate } from 'react-router';
 
 const CreateInstance = () => {
   const { mutate: createInstance } = useCreateInstanceMutation();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -112,7 +114,11 @@ const CreateInstance = () => {
           <Button type="submit" variant={BUTTON_VARIANTS.LOGIN}>
             인스턴스 생성
           </Button>
-          <Button type="button" variant={BUTTON_VARIANTS.TEXT_MEDIUM}>
+          <Button
+            type="button"
+            variant={BUTTON_VARIANTS.TEXT_MEDIUM}
+            onClick={() => navigate(-1)}
+          >
             이전으로
           </Button>
         </div>

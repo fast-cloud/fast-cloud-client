@@ -7,7 +7,7 @@ import { ROUTES } from '@/routes/paths';
 function Home() {
   const navigate = useNavigate();
   const handleStartClick = () => {
-    navigate(ROUTES.NEW_INSTANCE);
+    navigate(ROUTES.SELECT_SERVICE);
   };
 
   return (

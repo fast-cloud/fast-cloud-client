@@ -9,11 +9,21 @@ interface Props {
   size: 'large' | 'small';
   title: string;
   detail: string;
+  tag?: string;
   explanations: string[];
   buttonName: string;
+  onSelect: () => void;
 }
 
-const CardRect = ({ size, title, detail, explanations, buttonName }: Props) => {
+const CardRect = ({
+  size,
+  title,
+  detail,
+  tag,
+  explanations,
+  buttonName,
+  onSelect,
+}: Props) => {
   return (
     <div className={styles.container({ size })}>
       <div>
@@ -27,9 +37,10 @@ const CardRect = ({ size, title, detail, explanations, buttonName }: Props) => {
         </div>
 
         <div className={styles.recommendationContainer}>
-          <Tag tagType={TAG_TYPES.GRAY}>추천</Tag>
-          {explanations.map((explanation) => (
-            <div className={styles.purposeRow}>
+          {tag && <Tag tagType={TAG_TYPES.GRAY}>{tag}</Tag>}
+          {/* TODO: key값 explanation으로 변경 */}
+          {explanations.map((explanation, index) => (
+            <div key={index} className={styles.purposeRow}>
               <Check />
               <span className={styles.purposeText}>{explanation}</span>
             </div>
@@ -37,7 +48,15 @@ const CardRect = ({ size, title, detail, explanations, buttonName }: Props) => {
         </div>
       </div>
 
-      <Button type="button" variant={BUTTON_VARIANTS.CTA_LARGE}>
+      <Button
+        type="button"
+        variant={
+          size === 'large'
+            ? BUTTON_VARIANTS.CTA_LARGE
+            : BUTTON_VARIANTS.CTA_SMALL
+        }
+        onClick={onSelect}
+      >
         {buttonName}
       </Button>
     </div>
