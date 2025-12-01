@@ -31,7 +31,7 @@ const CardRect = ({ size, title, detail, explanations, buttonName }: Props) => {
           {explanations.map((explanation) => (
             <div className={styles.purposeRow}>
               <Check />
-              <span>{explanation}</span>
+              <span className={styles.purposeText}>{explanation}</span>
             </div>
           ))}
         </div>

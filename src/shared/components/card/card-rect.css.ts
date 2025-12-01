@@ -63,4 +63,10 @@ export const purposeContainer = style({
 export const purposeRow = style({
   display: 'flex',
   gap: '4px',
+  alignItems: 'center',
+});
+
+export const purposeText = style({
+  ...typographyVars.body_r_14,
+  color: colors.gray600,
 });

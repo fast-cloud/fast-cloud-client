@@ -1,7 +1,9 @@
 export const ROUTES = {
   HOME: '/home',
   NEW_INSTANCE: '/new-instance',
-  TEST: '/test',
+  SELECT_SERVICE: '/select-service',
+  SELECT_INSTANCE_TYPE: '/select-instance-type',
   CREATE_INSTANCE: '/create-instance',
   CREATE_CONTAINER: '/create-container',
+  TEST: '/test',
 };

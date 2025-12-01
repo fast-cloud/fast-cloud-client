@@ -5,6 +5,8 @@ import { TestPage } from '@/pages/Test/TestPage';
 import Layout from '@/routes/layout';
 import { ROUTES } from '@/routes/paths';
 import { createBrowserRouter, Navigate } from 'react-router';
+import SelectService from '@/pages/main/service/select-service';
+import SelectInstanceType from '@/pages/main-service/mini-pc/select-instance-type/select-instance-type';
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.HOME,
         element: <Home />,
+      },
+      {
+        path: ROUTES.SELECT_SERVICE,
+        element: <SelectService />,
+      },
+      {
+        path: ROUTES.SELECT_INSTANCE_TYPE,
+        element: <SelectInstanceType />,
       },
       {
         path: ROUTES.CREATE_INSTANCE,
