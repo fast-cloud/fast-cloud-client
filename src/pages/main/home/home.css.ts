@@ -33,7 +33,7 @@ export const title = style({
   ...typographyVars.heading_sb_60,
   color: colors.gray000,
   opacity: 0,
-  animation: `${fadeUp} 0.6s ease-out forwards`,
+  animation: `${fadeUp} 0.8s ease-out forwards`,
 });
 
 export const subtitle = style({
@@ -42,10 +42,11 @@ export const subtitle = style({
   whiteSpace: 'pre-line',
   textAlign: 'center',
   opacity: 0,
-  animation: `${fadeUp} 0.8s ease-out 0.4s forwards`,
+  animation: `${fadeUp} 1.2s ease-out 0.6s forwards`,
+  // 재생시간: 0.8s, 지연시간: 로드된 후 애니메이션 시작까지 걸리는 시간
 });
 
 export const button = style({
   opacity: 0,
-  animation: `${fadeUp} 1s ease-out 0.8s forwards`,
+  animation: `${fadeUp} 1.2s ease-out 1.2s forwards`,
 });
