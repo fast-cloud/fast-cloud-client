@@ -23,7 +23,7 @@ export interface CreateContainerResponse {
 // 컨테이너 조회
 export interface Summary {
   totalContainers: number;
-  runingContainers: number;
+  runningContainers: number;
   clusterCount: number;
 }
 

@@ -4,12 +4,13 @@ import { Button } from '@/shared/components/button/Button';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateContainerMutation } from '@/apis/mutations/use-create-container';
-import { useContainerList } from '@/apis/queries/use-get-container-list';
 import type { FormEvent } from 'react';
+import { useNavigate } from 'react-router';
+import { ROUTES } from '@/routes/paths';
 
 const CreateContainer = () => {
+  const navigate = useNavigate();
   const { mutate: createContainer } = useCreateContainerMutation();
-  const { refetch: getContainerList } = useContainerList();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,11 +24,6 @@ const CreateContainer = () => {
       externalPort: Number(formData.get('externalPort')),
       internalPort: Number(formData.get('internalPort')),
     });
-  };
-
-  const handleContainerButtonClick = async () => {
-    const result = await getContainerList();
-    console.log(result.data);
   };
 
   return (
@@ -87,7 +83,7 @@ const CreateContainer = () => {
         <Button
           type="button"
           variant={BUTTON_VARIANTS.LOGIN}
-          onClick={handleContainerButtonClick}
+          onClick={() => navigate(ROUTES.CONTAINER_INFO)}
         >
           컨테이너 조회
         </Button>

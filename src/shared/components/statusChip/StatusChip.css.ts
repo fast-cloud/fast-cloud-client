@@ -19,6 +19,12 @@ export const container = recipe({
       inProgress: {
         backgroundColor: colors.green_14,
       },
+      stop: {
+        backgroundColor: colors.gray000_10,
+      },
+      fail: {
+        backgroundColor: colors.error_08,
+      },
     },
   },
 });
@@ -35,6 +41,12 @@ export const statusCircle = recipe({
     status: {
       inProgress: {
         backgroundColor: colors.green,
+      },
+      stop: {
+        backgroundColor: colors.gray500,
+      },
+      fail: {
+        backgroundColor: colors.error,
       },
     },
   },

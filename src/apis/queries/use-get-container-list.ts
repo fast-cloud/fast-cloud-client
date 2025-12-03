@@ -15,6 +15,5 @@ export const useContainerList = () => {
   return useQuery({
     queryKey: caasQueryKeys.container(),
     queryFn: () => getContainerList(),
-    enabled: false,
   });
 };

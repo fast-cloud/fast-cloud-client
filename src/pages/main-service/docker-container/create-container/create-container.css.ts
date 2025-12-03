@@ -5,7 +5,7 @@ import { typographyVars } from '@/shared/styles/tokens/typography.css';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '120px 120px 0',
+  padding: '100px 120px 0',
   alignItems: 'center',
   gap: '60px',
   width: '100%',

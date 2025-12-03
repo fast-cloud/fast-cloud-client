@@ -15,6 +15,7 @@ export const title = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '16px',
+  alignItems: 'center',
 });
 
 export const mainTitle = style({

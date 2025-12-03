@@ -1,5 +1,7 @@
 export const STATUS_CHIP_TYPES = {
   IN_PROGRESS: 'inProgress',
+  STOP: 'stop',
+  FAIL: 'fail',
 } as const;
 
 export type StatusChipType =
