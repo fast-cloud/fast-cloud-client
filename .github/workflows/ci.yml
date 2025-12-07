@@ -1,3 +1,4 @@
+# CI 워크플로우: PR 및 Push 시 코드 품질 검사 및 빌드 수행
 name: ci
 
 on:
@@ -8,14 +9,16 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
+  pull-requests: write # PR 코멘트 작성 권한
 
 jobs:
   build:
+    # PR이거나, [skip ci]가 없는 push일 때만 실행
     if: github.event_name == 'pull_request' || (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
     runs-on: ubuntu-latest
 
     steps:
+      # 1. 환경 설정
       - name: Checkout repository
         uses: actions/checkout@v5
 
@@ -33,11 +36,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # 2. 코드 품질 검사, 실패 시 CI 실패
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Check formatting
+        run: pnpm format:check
+
+      # 3. 빌드
       - name: Build project with Vite
         id: build
         run: pnpm run build
-        continue-on-error: true
+        continue-on-error: true # 빌드 실패해도 PR 코멘트 작성을 위해 계속 진행
 
+      # 4. 빌드 결과 처리
       - name: Evaluate build status
         id: status
         run: |
@@ -52,6 +64,7 @@ jobs:
           echo "result=$result" >> $GITHUB_OUTPUT
           echo "message=$message" >> $GITHUB_OUTPUT
 
+      # 5. PR에 빌드 결과 코멘트
       - name: Add comment to PR with build status
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
