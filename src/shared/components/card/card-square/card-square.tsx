@@ -5,24 +5,32 @@ import { getStatusChipType, getStatusLabel } from '@/shared/utils/status';
 import { Divider_Large, Divider_Vertical } from '@/assets/svg';
 
 interface Props {
+  instanceId: string;
   instanceName: string;
   status: string;
   templateName: string;
   templateDesc: string;
   ipAddress: string;
   createdAt: string;
+  onClick?: (instanceId: string) => void;
 }
 
 const CardSquare = ({
+  instanceId,
   instanceName,
   status,
   templateName,
   templateDesc,
   ipAddress,
   createdAt,
+  onClick,
 }: Props) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={() => onClick?.(instanceId)}
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
+    >
       <div className={styles.titleContainer}>
         <h3 className={styles.title}>{instanceName}</h3>
         <StatusChip status={getStatusChipType(status)}>
