@@ -11,7 +11,7 @@ export const container = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   zIndex: 1000,
-  backgroundColor: colors.gray999,
+  backgroundColor: 'transparent',
 });
 
 export const buttonContainer = style({
