@@ -6,5 +6,6 @@ export const ROUTES = {
   CREATE_INSTANCE: '/create-instance',
   CREATE_CONTAINER: '/create-container',
   CONTAINER_INFO: '/container-info',
+  INSTANCE_INFO: '/instance-info',
   TEST: '/test',
 };
