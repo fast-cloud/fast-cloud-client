@@ -1,4 +1,4 @@
-// 버킷 생성 POST
+// 인스턴스 생성 POST
 export interface CreateInstanceRequest {
   instanceName: string;
   templateId: number;
@@ -10,4 +10,24 @@ export interface CreateInstanceResponse {
   openstackUuid: string;
   status: string;
   createdAt: string;
+}
+
+// 인스턴스 조회 GET
+export interface InstanceTemplate {
+  name: string;
+  desc: string;
+}
+
+export interface Instance {
+  instanceId: string;
+  instanceName: string;
+  status: string;
+  ipAddress: string;
+  template: InstanceTemplate;
+  createdAt: string;
+}
+
+export interface InstanceListResponse {
+  status: string;
+  data: Instance[];
 }
