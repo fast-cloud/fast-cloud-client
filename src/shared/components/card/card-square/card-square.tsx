@@ -1,10 +1,7 @@
-import {
-  STATUS_CHIP_TYPES,
-  type StatusChipType,
-} from '@/shared/constants/statusChip';
 import { StatusChip } from '../../statusChip/StatusChip';
 import * as styles from './card-square.css';
 import { formatDateTime } from '@/shared/utils/format-date';
+import { getStatusChipType, getStatusLabel } from '@/shared/utils/status';
 import { Divider_Large, Divider_Vertical } from '@/assets/svg';
 
 interface Props {
@@ -15,42 +12,6 @@ interface Props {
   ipAddress: string;
   createdAt: string;
 }
-
-const getStatusChipType = (status: string): StatusChipType => {
-  switch (status.toUpperCase()) {
-    case 'ACTIVE':
-    case 'RUNNING':
-      return STATUS_CHIP_TYPES.IN_PROGRESS;
-    case 'BUILD':
-    case 'PENDING':
-      return STATUS_CHIP_TYPES.PENDING;
-    case 'SHUTOFF':
-    case 'STOPPED':
-      return STATUS_CHIP_TYPES.STOP;
-    case 'ERROR':
-      return STATUS_CHIP_TYPES.FAIL;
-    default:
-      return STATUS_CHIP_TYPES.IN_PROGRESS;
-  }
-};
-
-const getStatusLabel = (status: string): string => {
-  switch (status.toUpperCase()) {
-    case 'ACTIVE':
-    case 'RUNNING':
-      return '실행중';
-    case 'BUILD':
-    case 'PENDING':
-      return '대기중';
-    case 'SHUTOFF':
-    case 'STOPPED':
-      return '중지됨';
-    case 'ERROR':
-      return '오류';
-    default:
-      return status;
-  }
-};
 
 const CardSquare = ({
   instanceName,
