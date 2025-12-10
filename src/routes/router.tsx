@@ -8,6 +8,7 @@ import { createBrowserRouter, Navigate } from 'react-router';
 import SelectService from '@/pages/main/service/select-service';
 import SelectInstanceType from '@/pages/main-service/mini-pc/select-instance-type/select-instance-type';
 import ContainerInfo from '@/pages/main-service/docker-container/container-info/container-info';
+import InstanceInfo from '@/pages/main-service/mini-pc/instance-info/instance-info';
 
 // TODO: 라우터 정리
 export const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.CREATE_INSTANCE,
         element: <CreateInstance />,
+      },
+      {
+        path: ROUTES.INSTANCE_INFO,
+        element: <InstanceInfo />,
       },
       {
         path: ROUTES.CREATE_CONTAINER,
