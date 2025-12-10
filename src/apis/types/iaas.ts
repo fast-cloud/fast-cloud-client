@@ -31,3 +31,14 @@ export interface InstanceListResponse {
   status: string;
   data: Instance[];
 }
+
+// 버킷 생성 POST
+export interface CreateBucketRequest {
+  name: string;
+}
+
+export interface CreateBucketResponse {
+  name: string;
+  status: string;
+  created_at: string;
+}
