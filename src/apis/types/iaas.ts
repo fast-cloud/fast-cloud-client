@@ -42,3 +42,16 @@ export interface CreateBucketResponse {
   status: string;
   created_at: string;
 }
+
+// 버킷 조회 GET
+
+export interface BucketObject {
+  name: string;
+  size: number;
+  last_modified: string;
+}
+
+export interface BucketListResponse {
+  bucket: string;
+  objects: BucketObject[];
+}
