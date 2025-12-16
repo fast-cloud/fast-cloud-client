@@ -1,7 +1,8 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { API_ENDPOINTS } from '../constants/api-endpoints';
 import { HTTPMethod, request } from '../request';
 import type { CreateBucketRequest, CreateBucketResponse } from '../types/iaas';
+import { iaasQueryKeys } from '../constants/query-key';
 
 const postCreateBucket = ({ name }: CreateBucketRequest) => {
   return request<CreateBucketResponse>({
@@ -12,10 +13,12 @@ const postCreateBucket = ({ name }: CreateBucketRequest) => {
 };
 
 export const useCreateBucketMutation = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: postCreateBucket,
-    onSuccess: (data) => {
-      console.log('버킷 생성 성공:', data);
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: iaasQueryKeys.bucket() });
     },
   });
 };
