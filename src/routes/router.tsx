@@ -9,6 +9,7 @@ import SelectService from '@/pages/main/service/select-service';
 import SelectInstanceType from '@/pages/main-service/mini-pc/select-instance-type/select-instance-type';
 import ContainerInfo from '@/pages/main-service/docker-container/container-info/container-info';
 import InstanceInfo from '@/pages/main-service/mini-pc/instance-info/instance-info';
+import BucketInfo from '@/pages/main-service/object-storage/bucket-info/bucket-info';
 
 // TODO: 라우터 정리
 export const router = createBrowserRouter([
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.TEST,
         element: <TestPage />,
+      },
+      {
+        path: ROUTES.BUCKET_INFO,
+        element: <BucketInfo />,
       },
     ],
   },

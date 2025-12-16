@@ -12,7 +12,7 @@ import { formatDate, formatDateTime } from '@/shared/utils/format-date';
 interface CreateBucketModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (name: string) => void;
+  onSubmit: (_name: string) => void;
 }
 
 const CreateBucketModal = ({
@@ -135,14 +135,7 @@ const BucketContent = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <header className={styles.title}>
-        <h1 className={styles.mainTitle}>Object Storage</h1>
-        <h2 className={styles.subtitle}>
-          버킷과 파일을 관리하고 데이터를 안전하게 저장할 수 있어요.
-        </h2>
-      </header>
-
+    <>
       <div className={styles.pageContainer}>
         {/* 왼쪽 사이드바 */}
         <div className={styles.sidebar}>
@@ -296,15 +289,24 @@ const BucketContent = () => {
         onClose={() => setIsModalOpen(false)}
         onSubmit={handleCreateBucket}
       />
-    </div>
+    </>
   );
 };
 
 const BucketInfo = () => {
   return (
-    <Suspense fallback={<Loading />}>
-      <BucketContent />
-    </Suspense>
+    <div className={styles.container}>
+      <header className={styles.title}>
+        <h1 className={styles.mainTitle}>Object Storage</h1>
+        <h2 className={styles.subtitle}>
+          버킷과 파일을 관리하고 데이터를 안전하게 저장할 수 있어요.
+        </h2>
+      </header>
+
+      {/* <Suspense fallback={<Loading />}>
+        <BucketContent />
+      </Suspense> */}
+    </div>
   );
 };
 

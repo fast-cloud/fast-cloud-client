@@ -50,7 +50,7 @@ const SelectService = () => {
             '최대 한 줄까지 쓸 수 있어요.',
           ]}
           buttonName="이동하기"
-          onSelect={() => navigate(ROUTES.NEW_INSTANCE)}
+          onSelect={() => navigate(ROUTES.BUCKET_INFO)}
         />
       </div>
     </div>

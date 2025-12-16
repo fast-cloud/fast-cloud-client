@@ -6,7 +6,7 @@ import { typographyVars } from '@/shared/styles/tokens/typography.css';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '60px 80px',
+  padding: '120px 120px 0',
   gap: '40px',
   width: '100%',
 });
@@ -16,6 +16,8 @@ export const title = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '16px',
+  alignSelf: 'center',
+  alignItems: 'center',
 });
 
 export const mainTitle = style({
