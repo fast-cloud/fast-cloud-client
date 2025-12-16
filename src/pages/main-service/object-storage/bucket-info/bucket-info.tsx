@@ -303,9 +303,9 @@ const BucketInfo = () => {
         </h2>
       </header>
 
-      {/* <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <BucketContent />
-      </Suspense> */}
+      </Suspense>
     </div>
   );
 };
