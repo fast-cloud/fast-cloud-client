@@ -1,4 +1,3 @@
-import { colors } from '@/shared/styles/tokens/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const container = style({

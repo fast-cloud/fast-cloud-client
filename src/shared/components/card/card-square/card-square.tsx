@@ -12,11 +12,11 @@ interface Props {
   templateDesc: string;
   ipAddress: string;
   createdAt: string;
-  onClick?: (instanceId: string) => void;
+  onClick?: () => void;
 }
 
 const CardSquare = ({
-  instanceId,
+  // instanceId,
   instanceName,
   status,
   templateName,
@@ -28,7 +28,7 @@ const CardSquare = ({
   return (
     <div
       className={styles.container}
-      onClick={() => onClick?.(instanceId)}
+      onClick={() => onClick?.()}
       style={{ cursor: onClick ? 'pointer' : 'default' }}
     >
       <div className={styles.titleContainer}>
