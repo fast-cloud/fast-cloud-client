@@ -16,6 +16,18 @@ const SelectService = () => {
       </div>
 
       <div className={styles.selections}>
+        {/* <CardRect
+          size="large"
+          title="미니PC 대여"
+          detail="원격으로 접속 가능한 가상 머신을 생성하고 자유롭게 개발 환경을 구축하세요."
+          explanations={[
+            '미니PC 대여',
+            'Ubuntu 22.04 LTS 기본 제공',
+            '다양한 사양의 인스턴스 선택 가능',
+          ]}
+          buttonName="이동하기"
+          onSelect={() => navigate(ROUTES.SELECT_INSTANCE_TYPE)}
+        /> */}
         <CardRect
           size="large"
           title="컨테이너 서비스"
