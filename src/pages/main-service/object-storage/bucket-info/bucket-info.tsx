@@ -114,10 +114,10 @@ const BucketSidebar = ({
         <Button variant={BUTTON_VARIANTS.NAV_SIGNUP} onClick={onOpenCreate}>
           + 버킷 생성
         </Button>
-        <button className={styles.createButtonSecondary}>
+        {/* <button className={styles.createButtonSecondary}>
           <Folder_Default />
           폴더 생성
-        </button>
+        </button> */}
       </div>
 
       <div className={styles.section}>
@@ -135,9 +135,10 @@ const BucketSidebar = ({
               return (
                 <div
                   key={bucket.bucket_id}
-                  className={styles.bucketCard}
+                  className={
+                    isSelected ? styles.bucketCardSelected : styles.bucketCard
+                  }
                   onClick={() => onSelectBucket(bucket.name)}
-                  style={{ cursor: 'pointer' }}
                 >
                   <div className={styles.bucketHeader}>
                     <div className={styles.bucketName}>
